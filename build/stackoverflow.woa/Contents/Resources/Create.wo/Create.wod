@@ -1,0 +1,16 @@
+Form: WOForm {
+	enctype = "multipart/form-data";
+}
+
+setTitle: WOTextField {
+	value = nameToInsert;
+}
+
+setContent: WOTextField {
+	value = contentToInsert;
+}
+
+saveQuestion: WOSubmitButton {
+	action = checkClick;
+	value = "Save";
+}
