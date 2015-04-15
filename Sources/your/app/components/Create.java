@@ -1,6 +1,5 @@
 package your.app.components;
 
-import java.util.ArrayList;
 import your.app.*;
 
 import com.webobjects.appserver.WOContext;
