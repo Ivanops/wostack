@@ -2,10 +2,14 @@ package stepDefinition;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
+import cucumber.api.java.en.Then;
 
 
 public class Test_Steps {
@@ -20,13 +24,36 @@ public class Test_Steps {
  
         //Launch the Online Store Website
  
-        driver.get("http://www.google.com");
- 
+        driver.get("http://localhost:50000");
         
-        System.out.println("LogOut Successfully");
- 
-        // Close the driver
- 
-        driver.quit();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        
 	}
+	
+	@When("^User enters Title and Content$")
+	public void user_enters_title_and_content() throws Throwable {
+		driver.findElement(By.id("titleInput")).sendKeys("Test title");
+        
+	     driver.findElement(By.id("contentInput")).sendKeys("Here is a test content");
+	        
+	     driver.findElement(By.id("saveButton")).click();
+	     
+	     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	@Then("^Title and Content show$")
+	public void title_and_content_show() throws Throwable {
+		
+		String title = driver.findElement(By.id("titleShow")).getText();
+		String content = driver.findElement(By.id("contentShow")).getText();
+		Assert.assertEquals("Test title", title);
+		Assert.assertEquals("Here is a test content", content); 
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	@Then("^Exit Browser$")
+	public void exit_browser() throws Throwable {
+		 driver.quit();
+	}
+	
 }

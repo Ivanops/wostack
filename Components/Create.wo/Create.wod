@@ -4,13 +4,24 @@ Form: WOForm {
 
 setTitle: WOTextField {
 	value = nameToInsert;
+	id = "titleInput";
 }
 
 setContent: WOTextField {
 	value = contentToInsert;
+	id = "contentInput";
 }
 
 saveQuestion: WOSubmitButton {
 	action = checkClick;
 	value = "Save";
+	id = "saveButton";
+}
+
+lastTitle: WOString {
+	value = lastTitle;
+}
+
+lastContent: WOString {
+	value = lastContent;
 }

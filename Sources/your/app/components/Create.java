@@ -15,6 +15,9 @@ public class Create extends WOComponent {
 	public String nameToInsert;
 	public String contentToInsert;
 	
+	public String lastTitle;
+	public String lastContent;
+	
 	private Question questions[];
 	private int count;
 
@@ -22,6 +25,10 @@ public class Create extends WOComponent {
         super(context);
         this.nameToInsert = "";
         this.contentToInsert = "";
+        
+        this.lastTitle = "NONE";
+        this.lastContent = "NONE";
+        
         this.questions = new Question[10];
         this.count = 0;
     }
@@ -32,6 +39,9 @@ public class Create extends WOComponent {
 		Question question = new Question(this.nameToInsert, this.contentToInsert);
 		this.questions[this.count++] = question;
 		this.showQuestions();
+		this.lastTitle = this.nameToInsert;
+		this.lastContent = this.contentToInsert;
+		
 		this.nameToInsert = "";
         this.contentToInsert = "";
 	}
