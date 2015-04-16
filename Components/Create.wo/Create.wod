@@ -25,3 +25,13 @@ lastTitle: WOString {
 lastContent: WOString {
 	value = lastContent;
 }
+
+questionList: WORepetition {
+	list = questions;
+	item = currentQuestion;
+}
+
+questionItem: QuestionItem {
+	questionTitle = currentQuestion.title;
+	questionContent = currentQuestion.content;
+}

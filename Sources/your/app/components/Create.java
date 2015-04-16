@@ -1,5 +1,7 @@
 package your.app.components;
 
+import java.util.ArrayList;
+
 import your.app.*;
 
 import com.webobjects.appserver.WOContext;
@@ -18,7 +20,9 @@ public class Create extends WOComponent {
 	public String lastTitle;
 	public String lastContent;
 	
-	private Question questions[];
+	/*public Question questions[];*/
+	public ArrayList questions;
+	public Question currentQuestion;
 	private int count;
 
 	public Create(WOContext context) {
@@ -29,19 +33,18 @@ public class Create extends WOComponent {
         this.lastTitle = "";
         this.lastContent = "";
         
-        this.questions = new Question[10];
+        questions = new ArrayList();
         this.count = 0;
     }
 	
 	public void checkClick () {
 		if(this.nameToInsert != null && this.contentToInsert != null) {
 			Question question = new Question(this.nameToInsert, this.contentToInsert);
-			this.questions[this.count++] = question;
+			this.questions.add(question);
 			this.showQuestions();
 			this.lastTitle = this.nameToInsert;
 			this.lastContent = this.contentToInsert;
-			
-			
+						
 		} else {
 			this.lastTitle = "Your Title or Content input has an error";
 			this.lastContent = "";
@@ -55,8 +58,8 @@ public class Create extends WOComponent {
 	public void showQuestions() {
 		for (int i = 0; i < this.count; i++) {
 			System.out.println("Question: " + i);
-			System.out.println(this.questions[i].getTitle());
-			System.out.println(this.questions[i].getContent());
+			//System.out.println((Question)(this.questions.get(i)).getTitle());
+			//System.out.println(this.questions.get(i).getContent());
 		}
 	}
 
