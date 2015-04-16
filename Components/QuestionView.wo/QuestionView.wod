@@ -1,0 +1,30 @@
+Title : WOString {
+    value = getTitle;
+}
+
+Content : WOString {
+    value = getContent;
+}
+
+List : WORepetition {
+    list = getList;
+    item = answer;
+}
+
+Item : WOString {
+    value = answer;
+}
+
+Form: WOForm {
+	enctype = "multipart/form-data";
+}
+
+newAnswer : WOTextField {
+	value = newAnswer;
+}
+
+addAnswer: WOSubmitButton {
+	action = addAnswer;
+	value = "Add";
+	id = "saveButton";
+}
