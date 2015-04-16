@@ -1,0 +1,29 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+.question {
+	height: 70px;
+	width: 40%;
+	border: 1px solid black;
+	margin: 5px;
+	border-radius: 5px;
+	background-color: silver;
+}
+
+.question .title {
+	font-size: 24px;
+	text-align: center;
+	height: 40px;
+}
+
+.question .content {
+	font-size: 18px;
+	overflow:hidden;
+    white-space:nowrap;
+	text-overflow: ellipsis;
+	text-align: center;
+	width: 90%;
+}

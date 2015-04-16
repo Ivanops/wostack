@@ -1,0 +1,8 @@
+questionTitle : WOHyperlink {
+	pageName = "Main";
+	string = questionTitle;
+}
+
+questionContent : WOString {
+	value = questionContent;
+}
