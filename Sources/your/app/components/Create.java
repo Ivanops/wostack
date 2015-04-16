@@ -26,24 +26,30 @@ public class Create extends WOComponent {
         this.nameToInsert = "";
         this.contentToInsert = "";
         
-        this.lastTitle = "NONE";
-        this.lastContent = "NONE";
+        this.lastTitle = "";
+        this.lastContent = "";
         
         this.questions = new Question[10];
         this.count = 0;
     }
 	
 	public void checkClick () {
-		System.out.println(this.nameToInsert);
-		System.out.println(this.contentToInsert);
-		Question question = new Question(this.nameToInsert, this.contentToInsert);
-		this.questions[this.count++] = question;
-		this.showQuestions();
-		this.lastTitle = this.nameToInsert;
-		this.lastContent = this.contentToInsert;
-		
+		if(this.nameToInsert != null && this.contentToInsert != null) {
+			Question question = new Question(this.nameToInsert, this.contentToInsert);
+			this.questions[this.count++] = question;
+			this.showQuestions();
+			this.lastTitle = this.nameToInsert;
+			this.lastContent = this.contentToInsert;
+			
+			
+		} else {
+			this.lastTitle = "Your Title or Content input has an error";
+			this.lastContent = "";
+		}
+		 
 		this.nameToInsert = "";
         this.contentToInsert = "";
+		
 	}
 	
 	public void showQuestions() {
