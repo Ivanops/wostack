@@ -41,7 +41,6 @@ public class Create extends WOComponent {
 		if(this.nameToInsert != null && this.contentToInsert != null) {
 			Question question = new Question(this.nameToInsert, this.contentToInsert);
 			Helper.addQuestions(question);
-			this.questions.add(question);
 			this.count++;
 			this.showQuestions();
 			this.lastTitle = this.nameToInsert;
