@@ -21,7 +21,7 @@ public class Create extends WOComponent {
 	public String lastContent;
 	
 	/*public Question questions[];*/
-	public ArrayList questions;
+	public ArrayList<Question> questions;
 	public Question currentQuestion;
 	private int count;
 
@@ -33,7 +33,7 @@ public class Create extends WOComponent {
         this.lastTitle = "";
         this.lastContent = "";
         
-        questions = new ArrayList();
+        questions = new ArrayList<Question>();
         this.count = 0;
     }
 	
@@ -41,6 +41,7 @@ public class Create extends WOComponent {
 		if(this.nameToInsert != null && this.contentToInsert != null) {
 			Question question = new Question(this.nameToInsert, this.contentToInsert);
 			this.questions.add(question);
+			this.count++;
 			this.showQuestions();
 			this.lastTitle = this.nameToInsert;
 			this.lastContent = this.contentToInsert;
@@ -52,14 +53,14 @@ public class Create extends WOComponent {
 		 
 		this.nameToInsert = "";
         this.contentToInsert = "";
-		
 	}
 	
 	public void showQuestions() {
+		System.out.println("show!!!");
 		for (int i = 0; i < this.count; i++) {
-			System.out.println("Question: " + i);
-			//System.out.println((Question)(this.questions.get(i)).getTitle());
-			//System.out.println(this.questions.get(i).getContent());
+			System.out.println("Question: " + (i+1));
+			System.out.println(this.questions.get(i).getTitle());
+			System.out.println(this.questions.get(i).getContent());
 		}
 	}
 
