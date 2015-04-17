@@ -68,7 +68,6 @@ public class Create extends WOComponent {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			this.questions.add(question);
 			this.count++;
 			this.showQuestions();
 			this.lastTitle = this.nameToInsert;
