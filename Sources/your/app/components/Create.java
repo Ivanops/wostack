@@ -1,11 +1,16 @@
 package your.app.components;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
-import your.app.*;
+import your.app.Question;
 
-import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOComponent;
+import com.webobjects.appserver.WOContext;
+import com.webobjects.foundation.NSData;
 
 public class Create extends WOComponent {
     /**
@@ -23,8 +28,9 @@ public class Create extends WOComponent {
 	/*public Question questions[];*/
 	public ArrayList questions;
 	public Question currentQuestion;
+	public NSData img;
+	public String imgName;
 	private int count;
-
 	public Create(WOContext context) {
         super(context);
         this.nameToInsert = "";
@@ -34,12 +40,27 @@ public class Create extends WOComponent {
         this.lastContent = "";
         
         questions = new ArrayList();
+        this.img = new NSData();
+        this.imgName = "";
         this.count = 0;
+
     }
 	
 	public void checkClick () {
 		if(this.nameToInsert != null && this.contentToInsert != null) {
 			Question question = new Question(this.nameToInsert, this.contentToInsert);
+			try {
+				//File f = new File("Contents/Resources/images/images.png");
+				File f = new File("../../Resources/images/" + this.imgName);
+				FileOutputStream fos = new FileOutputStream(f.getAbsolutePath());
+				img.writeToStream(fos);				
+				fos.close();
+				
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			this.questions.add(question);
 			this.showQuestions();
 			this.lastTitle = this.nameToInsert;
