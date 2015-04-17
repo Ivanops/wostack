@@ -30,6 +30,7 @@ public class Create extends WOComponent {
 	public Question currentQuestion;
 	public NSData img;
 	public String imgName;
+	private String attachedFile;
 	private int count;
 	public Create(WOContext context) {
         super(context);
@@ -42,6 +43,7 @@ public class Create extends WOComponent {
         questions = new ArrayList();
         this.img = new NSData();
         this.imgName = "";
+        this.attachedFile = "";
         this.count = 0;
 
     }
@@ -50,11 +52,15 @@ public class Create extends WOComponent {
 		if(this.nameToInsert != null && this.contentToInsert != null) {
 			Question question = new Question(this.nameToInsert, this.contentToInsert);
 			try {
-				//File f = new File("Contents/Resources/images/images.png");
-				File f = new File("../../Resources/images/" + this.imgName);
-				FileOutputStream fos = new FileOutputStream(f.getAbsolutePath());
-				img.writeToStream(fos);				
-				fos.close();
+				if(this.imgName != "") {
+					//File f = new File("Contents/Resources/images/images.png");
+					File f = new File("../../Resources/images/" + this.imgName);
+					FileOutputStream fos = new FileOutputStream(f.getAbsolutePath());
+					img.writeToStream(fos);				
+					fos.close();
+					this.attachedFile = f.getAbsolutePath();
+				}
+
 				
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
