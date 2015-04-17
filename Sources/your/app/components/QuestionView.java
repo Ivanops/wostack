@@ -1,18 +1,16 @@
 package your.app.components;
-import your.app.*;
 
 import java.util.ArrayList;
 
+import your.app.Answer;
+import your.app.Helper;
 import your.app.Question;
-
+import java.lang.reflect.*;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOComponent;
 
 public class QuestionView extends WOComponent {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Question question;
 	public Answer answer;
@@ -20,12 +18,12 @@ public class QuestionView extends WOComponent {
 	public Integer index;
 	public String person = "unknow";
     
-    public QuestionView(WOContext context) {
+    public QuestionView(WOContext context) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         super(context);
-        String title = "Is it correct do this?";
-        String content = "I have problem with this...";
-        question = new Question(title, content);
-        
+        WOComponent QuestionItem =  context.component();
+        Method getId = QuestionItem.getClass().getMethod("getId");
+        int Id = (Integer)getId.invoke(QuestionItem);
+        question = Helper.getQuestionsById(Id);
     }
 
     public String getTitle() {
@@ -41,8 +39,12 @@ public class QuestionView extends WOComponent {
 	} 
     
     public void addAnswer () {
-    	Answer aux = new Answer(this.newAnswer, this.person);
-		question.addAnswer(aux);
+    	if(!this.newAnswer.equals("") && !this.person.equals("")) {
+    		Answer answer = new Answer(this.newAnswer, this.person);
+    		question.addAnswer(answer);
+    	}
+		this.newAnswer = "";
+		this.person = "";
 	}
     
     public void addPoint () {

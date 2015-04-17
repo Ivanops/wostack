@@ -33,13 +33,14 @@ public class Create extends WOComponent {
         this.lastTitle = "";
         this.lastContent = "";
         
-        questions = new ArrayList<Question>();
+        questions = Helper.getQuestions();
         this.count = 0;
     }
 	
 	public void checkClick () {
 		if(this.nameToInsert != null && this.contentToInsert != null) {
 			Question question = new Question(this.nameToInsert, this.contentToInsert);
+			Helper.addQuestions(question);
 			this.questions.add(question);
 			this.count++;
 			this.showQuestions();

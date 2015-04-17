@@ -5,16 +5,23 @@ import java.util.Iterator;
 
 public class Question {
 	
+	private int Id;
 	private String title;
 	private String content;
 	private ArrayList<Answer> Answers;
 	
 	public Question(String title, String content) {
+		Double d = Math.random()*1000000;
+		this.Id = d.intValue();
 		this.setTitle(title);
 		this.setContent(content);
 		this.Answers = new ArrayList<Answer>();
 	}
 
+	public int getId() {
+		return this.Id;
+	}
+	
 	public String getTitle() {
 		return title;
 	}
