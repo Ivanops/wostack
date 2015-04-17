@@ -32,6 +32,7 @@ questionList: WORepetition {
 }
 
 questionItem: QuestionItem {
+    questionId = currentQuestion.id;
 	questionTitle = currentQuestion.title;
 	questionContent = currentQuestion.content;
 }

@@ -41,7 +41,7 @@ public class Create extends WOComponent {
         this.lastTitle = "";
         this.lastContent = "";
         
-		this.questions = new ArrayList<Question>();
+        questions = Helper.getQuestions();
         this.img = new NSData();
         this.imgName = "";
         this.attachedFile = "";
@@ -51,6 +51,7 @@ public class Create extends WOComponent {
 	public void checkClick () {
 		if(this.nameToInsert != null && this.contentToInsert != null) {
 			Question question = new Question(this.nameToInsert, this.contentToInsert);
+			Helper.addQuestions(question);
 			try {
 				if(this.imgName != "") {
 					//File f = new File("Contents/Resources/images/images.png");
