@@ -3,10 +3,34 @@ Title:<div id="title"><webobject name="Title"></webobject></div>
 Content:<div id="content"><webobject name="Content"></webobject></div>
 List:
 <ul>
-	<webobject name="List"><li><webobject name="Item"></webobject></li></webobject>
+	<webobject name="List">
+		<div class = "answer-container" id=<webobject name = "ID"></webobject>>
+			<div class = "left-container">
+			<webobject name = "FormAdd">
+				<webobject name = "addPoint"></webobject>
+			</webobject>
+				<div class = "points-container">
+					<webobject name = "Points"></webobject>
+				</div>
+			<webobject name = "FormRemove">
+				<webobject name = "removePoint"></webobject>
+			</webobject>
+			</div>
+			<div class = "right-container">
+				<div class = "person">
+					Person: <webobject name = "Person"></webobject>
+				</div>
+				Resp:
+				<webobject name = "AnswerContent"></webobject>
+			</div>
+		</div>
+	</webobject>
 </ul>
 <webobject name="Form">
 	Add new Answer:
+	<h3>User: </h3><webobject name="userName"></webobject>
+	<br></br>
+	
 	<h3>Answer: </h3><webobject name="newAnswer"></webobject>
 	<br></br>
 	<webobject name="addAnswer"></webobject>

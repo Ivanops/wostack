@@ -2,11 +2,22 @@
 // height: 100%;"></iframe>
 //<webobject name="view"></webobject>
 
-view: Create {
+view: QuestionView {
 
 }
 QuestionStyle : WOResourceURL {
 	filename = "css/questionStyles.css";
 	framework = "app";
 	rel = "stylesheet";
+}
+
+AnswerStyle : WOResourceURL {
+	filename = "css/answersStyles.css";
+	framework = "app";
+	rel = "stylesheet";
+}
+
+createLink: WOHyperlink {
+	pageName = "Create";
+	
 }

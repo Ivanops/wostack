@@ -1,0 +1,34 @@
+.answer-container {
+	width: 100%;
+	height: 100px;
+	float: left;
+}
+
+.answer-container .left-container {
+	float: left;
+	height: 100%;
+	width: 100px;
+}
+
+.answer-container .left-container .points-button {
+	width: 100%;
+}
+
+.answer-container .left-container .points-container{
+	font-size: 20px;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+}
+
+.answer-container .right-container {
+	float: left;
+	height: 100%;
+	width: 300px;
+	margin-left: 10px;
+}
+
+.answer-container .right-container .person {
+	width: 100%;
+	height: 30px;
+}

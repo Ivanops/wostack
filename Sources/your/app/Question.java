@@ -1,17 +1,18 @@
 package your.app;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Question {
 	
 	private String title;
 	private String content;
-	private ArrayList Answers;
+	private ArrayList<Answer> Answers;
 	
 	public Question(String title, String content) {
 		this.setTitle(title);
 		this.setContent(content);
-		this.Answers = new ArrayList();
+		this.Answers = new ArrayList<Answer>();
 	}
 
 	public String getTitle() {
@@ -30,16 +31,25 @@ public class Question {
 		this.content = content;
 	}
 	
-	public ArrayList getAnswers() {
+	public ArrayList<Answer> getAnswers() {
 		return Answers;
 	}
 
-	public void setAnswers(ArrayList answers) {
+	public void setAnswers(ArrayList<Answer> answers) {
 		Answers = answers;
 	}
 	
-	public void addAnswer(String answer) {
+	public void addAnswer(Answer answer) {
 		this.Answers.add(answer);
-
+		this.showAnswers();
+	}
+	
+	public void showAnswers() {
+		for (Answer item : this.Answers) {
+			System.out.println(item.getContent());
+			System.out.println(item.getPoints());
+			System.out.println(item.getPerson());
+		}
+			
 	}
 }

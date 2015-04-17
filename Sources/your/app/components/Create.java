@@ -6,10 +6,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import your.app.Question;
+import your.app.*;
 
-import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
+import com.webobjects.appserver.WOComponent;
 import com.webobjects.foundation.NSData;
 
 public class Create extends WOComponent {
@@ -26,12 +26,13 @@ public class Create extends WOComponent {
 	public String lastContent;
 	
 	/*public Question questions[];*/
-	public ArrayList questions;
+	public ArrayList<Question> questions;
 	public Question currentQuestion;
 	public NSData img;
 	public String imgName;
 	private String attachedFile;
 	private int count;
+
 	public Create(WOContext context) {
         super(context);
         this.nameToInsert = "";
@@ -40,12 +41,11 @@ public class Create extends WOComponent {
         this.lastTitle = "";
         this.lastContent = "";
         
-        questions = new ArrayList();
+		this.questions = new ArrayList<Question>();
         this.img = new NSData();
         this.imgName = "";
         this.attachedFile = "";
         this.count = 0;
-
     }
 	
 	public void checkClick () {
@@ -68,6 +68,7 @@ public class Create extends WOComponent {
 				e.printStackTrace();
 			}
 			this.questions.add(question);
+			this.count++;
 			this.showQuestions();
 			this.lastTitle = this.nameToInsert;
 			this.lastContent = this.contentToInsert;
@@ -79,14 +80,14 @@ public class Create extends WOComponent {
 		 
 		this.nameToInsert = "";
         this.contentToInsert = "";
-		
 	}
 	
 	public void showQuestions() {
+		System.out.println("show!!!");
 		for (int i = 0; i < this.count; i++) {
-			System.out.println("Question: " + i);
-			//System.out.println((Question)(this.questions.get(i)).getTitle());
-			//System.out.println(this.questions.get(i).getContent());
+			System.out.println("Question: " + (i+1));
+			System.out.println(this.questions.get(i).getTitle());
+			System.out.println(this.questions.get(i).getContent());
 		}
 	}
 

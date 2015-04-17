@@ -9,10 +9,43 @@ Content : WOString {
 List : WORepetition {
     list = getList;
     item = answer;
+    index = index;
 }
 
-Item : WOString {
-    value = answer;
+ID: WOString {
+	value = index;
+}
+
+Points: WOString {
+	value = answer.points;
+}
+
+Person: WOString {
+	value = answer.person;
+}
+
+AnswerContent: WOString {
+	value = answer.content;
+}
+
+addPoint: WOSubmitButton {
+	action = addPoint;
+	value = "ADD";
+	class = "points-button";
+}
+
+removePoint: WOSubmitButton {
+	action = removePoint;
+	value = "Remove";
+	class = "points-button";
+}
+
+FormAdd: WOForm {
+	enctype = "multipart/form-data";
+}
+
+FormRemove: WOForm {
+	enctype = "multipart/form-data";
 }
 
 Form: WOForm {
@@ -21,6 +54,10 @@ Form: WOForm {
 
 newAnswer : WOTextField {
 	value = newAnswer;
+}
+
+userName: WOTextField {
+	value = person;
 }
 
 addAnswer: WOSubmitButton {
