@@ -54,14 +54,16 @@ Form: WOForm {
 
 newAnswer : WOTextField {
 	value = newAnswer;
+	id = "newAnswerId";
 }
 
 userName: WOTextField {
 	value = person;
+	id = "personId";
 }
 
 addAnswer: WOSubmitButton {
 	action = addAnswer;
 	value = "Add";
-	id = "saveButton";
+	id = "addButton";
 }
