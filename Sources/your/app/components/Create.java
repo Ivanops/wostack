@@ -52,16 +52,16 @@ public class Create extends WOComponent {
 
 			try {
 				if(this.imgName != "") {
-					File f = new File("Contents/Resources/images/" + this.imgName);
-					//File f = new File("../../Resources/images/" + this.imgName);
-					FileOutputStream fos = new FileOutputStream(f.getAbsolutePath());
-					img.writeToStream(fos);				
-					fos.close();
-					
 					File f2 = new File("../../Resources/images/" + this.imgName);
 					FileOutputStream fos2 = new FileOutputStream(f2.getAbsolutePath());
 					img.writeToStream(fos2);				
-					fos2.close();					
+					fos2.close();
+					
+					File f = new File("Contents/Resources/images/" + this.imgName);
+					FileOutputStream fos = new FileOutputStream(f.getAbsolutePath());
+					img.writeToStream(fos);				
+					fos.close();
+										
 					question.setImagePath("images/" + f.getName());
 				}
 

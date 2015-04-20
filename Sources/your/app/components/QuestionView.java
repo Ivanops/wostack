@@ -62,6 +62,7 @@ public class QuestionView extends WOComponent {
     		if(this.answerImagePath != "") {
 				try {
 					ans.imagePath = "images/" + this.answerImagePath;
+					
 					File f = new File("Contents/Resources/images/" + this.answerImagePath);
 					FileOutputStream fos;
 					fos = new FileOutputStream(f.getAbsolutePath());
