@@ -52,15 +52,12 @@ public class QuestionView extends WOComponent {
 	} 
     
     public void addAnswer () {
-    	if(!this.newAnswer.equals("") && !this.person.equals("")) {
-    		Answer ans = new Answer(this.newAnswer, this.person);
-    		ans.imagePath = "images/" + this.answerImagePath;
-    		//ans.setImage(this.answer.img);
-    		//this.answer = ans;
-    		question.addAnswer(ans);
+    	if((this.newAnswer != null) && this.person != null) {
+    		Answer answer = new Answer(this.newAnswer, this.person);
+    		answer.imagePath = "images/" + this.answerImagePath;
+    		question.addAnswer(answer);
     	}
 		this.newAnswer = "";
-		this.person = "";
 	}
     
     public void addPoint () {
