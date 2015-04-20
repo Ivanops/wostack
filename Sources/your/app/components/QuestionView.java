@@ -59,7 +59,6 @@ public class QuestionView extends WOComponent {
     public void addAnswer () {
     	if(!this.newAnswer.equals("") && !this.person.equals("")) {
     		Answer ans = new Answer(this.newAnswer, this.person);
-    		System.out.println(this.answerImagePath);
     		if(this.answerImagePath != "") {
 				try {
 					ans.imagePath = "images/" + this.answerImagePath;
@@ -84,7 +83,6 @@ public class QuestionView extends WOComponent {
     		question.addAnswer(ans);
     	}
 		this.newAnswer = "";
-		this.person = "";
 		this.answerImagePath = "";
 	}
     
