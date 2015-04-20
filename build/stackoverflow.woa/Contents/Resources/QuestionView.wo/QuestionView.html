@@ -1,6 +1,11 @@
 <h1>QUESTION:</h1>
 Title:<div id="title"><webobject name="Title"></webobject></div>
 Content:<div id="content"><webobject name="Content"></webobject></div>
+<div>
+	<webobject name = "showImage">
+		<webobject name = "image"></webobject>
+	</webobject>
+</div>
 List:
 <ul>
 	<webobject name="List">
@@ -22,6 +27,9 @@ List:
 				</div>
 				Resp:
 				<webobject name = "AnswerContent"></webobject>
+				<div class="answerImage">
+					<webobject name = "answerImage"></webobject>
+				</div>
 			</div>
 		</div>
 	</webobject>
@@ -33,5 +41,6 @@ List:
 	
 	<h3>Answer: </h3><webobject name="newAnswer"></webobject>
 	<br></br>
+	<webobject name = "answerFileAttach"></webobject>
 	<webobject name="addAnswer"></webobject>
 </webobject>

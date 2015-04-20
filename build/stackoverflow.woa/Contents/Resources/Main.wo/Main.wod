@@ -2,7 +2,7 @@
 // height: 100%;"></iframe>
 //<webobject name="view"></webobject>
 
-view: QuestionView {
+view: Create {
 
 }
 QuestionStyle : WOResourceURL {

@@ -30,7 +30,6 @@ public class Create extends WOComponent {
 	public Question currentQuestion;
 	public NSData img;
 	public String imgName;
-	private String attachedFile;
 	private int count;
 
 	public Create(WOContext context) {
@@ -44,14 +43,13 @@ public class Create extends WOComponent {
         questions = Helper.getQuestions();
         this.img = new NSData();
         this.imgName = "";
-        this.attachedFile = "";
         this.count = 0;
     }
 	
 	public void checkClick () {
 		if(this.nameToInsert != null && this.contentToInsert != null) {
 			Question question = new Question(this.nameToInsert, this.contentToInsert);
-			Helper.addQuestions(question);
+
 			try {
 				if(this.imgName != "") {
 					//File f = new File("Contents/Resources/images/images.png");
@@ -59,7 +57,8 @@ public class Create extends WOComponent {
 					FileOutputStream fos = new FileOutputStream(f.getAbsolutePath());
 					img.writeToStream(fos);				
 					fos.close();
-					this.attachedFile = f.getAbsolutePath();
+					question.setImagePath("images/" + f.getName());
+					System.out.println(f.getName());
 				}
 
 				
@@ -68,6 +67,7 @@ public class Create extends WOComponent {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			Helper.addQuestions(question);			
 			this.count++;
 			this.showQuestions();
 			this.lastTitle = this.nameToInsert;

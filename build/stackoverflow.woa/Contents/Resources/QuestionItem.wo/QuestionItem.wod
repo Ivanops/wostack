@@ -1,5 +1,5 @@
 questionTitle : WOHyperlink {
-	pageName = "Main";
+	pageName = "QuestionView";
 	string = questionTitle;
 }
 

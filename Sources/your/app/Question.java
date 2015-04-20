@@ -3,12 +3,15 @@ package your.app;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import cucumber.api.java.lu.an;
+
 public class Question {
 	
 	private int Id;
 	private String title;
 	private String content;
 	private ArrayList<Answer> Answers;
+	private String imagePath;
 	
 	public Question(String title, String content) {
 		Double d = Math.random()*1000000;
@@ -44,6 +47,14 @@ public class Question {
 
 	public void setAnswers(ArrayList<Answer> answers) {
 		Answers = answers;
+	}
+	
+	public void setImagePath(String path) {
+		this.imagePath = path;
+	}
+	
+	public String getImagePath(){
+		return this.imagePath;
 	}
 	
 	public void addAnswer(Answer answer) {

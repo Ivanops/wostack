@@ -35,6 +35,7 @@ questionItem: QuestionItem {
     questionId = currentQuestion.id;
 	questionTitle = currentQuestion.title;
 	questionContent = currentQuestion.content;
+	questionImagePath = currentQuestion.imagePath;
 }
 
 fileUpload : WOFileUpload {

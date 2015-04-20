@@ -8,6 +8,7 @@ import your.app.Question;
 import java.lang.reflect.*;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOComponent;
+import com.webobjects.foundation.NSData;
 
 public class QuestionView extends WOComponent {
 	
@@ -17,9 +18,13 @@ public class QuestionView extends WOComponent {
 	public String newAnswer;
 	public Integer index;
 	public String person = "unknow";
+	public String answerImagePath;
+	public NSData answerImage;
     
     public QuestionView(WOContext context) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         super(context);
+        this.answerImagePath = "images/";
+        this.answerImage = new NSData();
         WOComponent QuestionItem =  context.component();
         Method getId = QuestionItem.getClass().getMethod("getId");
         int Id = (Integer)getId.invoke(QuestionItem);
@@ -33,15 +38,26 @@ public class QuestionView extends WOComponent {
     public String getContent() {
         return question.getContent();
     }
+    
+    public String getImagePath() {
+    	return question.getImagePath();
+    }
 
+    public boolean hasImage(){
+    	return question.getImagePath() != null ? true:false;
+    }
+    
     public ArrayList<Answer> getList() {
 		return question.getAnswers();
 	} 
     
     public void addAnswer () {
     	if(!this.newAnswer.equals("") && !this.person.equals("")) {
-    		Answer answer = new Answer(this.newAnswer, this.person);
-    		question.addAnswer(answer);
+    		Answer ans = new Answer(this.newAnswer, this.person);
+    		ans.imagePath = "images/" + this.answerImagePath;
+    		//ans.setImage(this.answer.img);
+    		//this.answer = ans;
+    		question.addAnswer(ans);
     	}
 		this.newAnswer = "";
 		this.person = "";
