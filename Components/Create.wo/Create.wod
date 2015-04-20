@@ -42,3 +42,11 @@ fileUpload : WOFileUpload {
 	data = img;
 	filePath = imgName;
 }
+
+prototype : WOJavaScript { 
+	scriptFile= "Contents/Resources/scripts/prototype.js";
+}
+
+createCollapase : WOJavaScript { 
+	scriptFile= "Contents/Resources/scripts/createCollapse.js";
+}
