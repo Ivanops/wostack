@@ -61,16 +61,18 @@ Form: WOForm {
 
 newAnswer : WOTextField {
 	value = newAnswer;
+	id = "newAnswerId";
 }
 
 userName: WOTextField {
 	value = person;
+	id = "personId";
 }
 
 addAnswer: WOSubmitButton {
 	action = addAnswer;
 	value = "Add";
-	id = "saveButton";
+	id = "addButton";
 }
 
 answerFileAttach : WOFileUpload {
@@ -80,4 +82,8 @@ answerFileAttach : WOFileUpload {
 
 answerImage : WOImage {
 	filename = answer.imagePath;
+}
+
+showAnswerImage : WOConditional {
+	condition = answer.hasAnswerImage;
 }

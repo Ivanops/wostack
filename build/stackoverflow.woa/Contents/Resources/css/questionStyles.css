@@ -5,7 +5,7 @@ html, body {
 }
 
 .question {
-	height: 100px;
+	height: 80px;
 	display: block;
 	width: 50%;
     margin: 0 auto;
@@ -15,9 +15,16 @@ html, body {
 .question .title {
 	font-size: 20px;
 	text-align: left;
-	height: 40px;
+	height: 30px;
+	color: aqua;
 }
 
+.question .title a {
+	text-decoration: none;
+}
+.question .title:first-letter {
+	text-transform: uppercase;
+}
 .question .content {
 	font-size: 18px;
 	overflow: hidden;
@@ -25,7 +32,6 @@ html, body {
 	text-overflow: ellipsis;
 	text-align: justify;
 	width: 90%;
-
 }
 
 .question .image {

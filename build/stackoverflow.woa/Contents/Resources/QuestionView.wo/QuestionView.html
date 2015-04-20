@@ -1,4 +1,6 @@
 <h1>QUESTION:</h1>
+<a href="/cgi-bin/WebObjects/stackoverflow.woa"> &lt; &lt; Go to question List</a><br>
+
 Title:<div id="title"><webobject name="Title"></webobject></div>
 Content:<div id="content"><webobject name="Content"></webobject></div>
 <div>
@@ -25,10 +27,13 @@ List:
 				<div class = "person">
 					Person: <webobject name = "Person"></webobject>
 				</div>
-				Resp:
-				<webobject name = "AnswerContent"></webobject>
+				<div class = "answer_content">
+					Answer: <webobject name = "AnswerContent"></webobject>
+				</div>
 				<div class="answerImage">
-					<webobject name = "answerImage"></webobject>
+					<webobject name = "showAnswerImage">
+						<webobject name = "answerImage"></webobject>
+					</webobject>
 				</div>
 			</div>
 		</div>

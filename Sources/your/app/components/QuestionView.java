@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import your.app.Answer;
 import your.app.Helper;
 import your.app.Question;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.*;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOComponent;
@@ -23,7 +28,7 @@ public class QuestionView extends WOComponent {
     
     public QuestionView(WOContext context) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         super(context);
-        this.answerImagePath = "images/";
+        this.answerImagePath = "";
         this.answerImage = new NSData();
         WOComponent QuestionItem =  context.component();
         Method getId = QuestionItem.getClass().getMethod("getId");
@@ -54,13 +59,33 @@ public class QuestionView extends WOComponent {
     public void addAnswer () {
     	if(!this.newAnswer.equals("") && !this.person.equals("")) {
     		Answer ans = new Answer(this.newAnswer, this.person);
-    		ans.imagePath = "images/" + this.answerImagePath;
-    		//ans.setImage(this.answer.img);
-    		//this.answer = ans;
+    		System.out.println(this.answerImagePath);
+    		if(this.answerImagePath != "") {
+				try {
+					ans.imagePath = "images/" + this.answerImagePath;
+					File f = new File("Contents/Resources/images/" + this.answerImagePath);
+					FileOutputStream fos;
+					fos = new FileOutputStream(f.getAbsolutePath());
+					this.answerImage.writeToStream(fos);				
+					fos.close();
+					
+					File f2 = new File("../../Resources/images/" + this.answerImagePath);
+					FileOutputStream fos2;
+					fos2 = new FileOutputStream(f2.getAbsolutePath());
+					this.answerImage.writeToStream(fos2);				
+					fos2.close();
+					
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}    		
+    		}
     		question.addAnswer(ans);
     	}
 		this.newAnswer = "";
 		this.person = "";
+		this.answerImagePath = "";
 	}
     
     public void addPoint () {
