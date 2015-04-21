@@ -1,6 +1,11 @@
 Title : WOString {
     value = getTitle;
 }
+AnswerStyle : WOResourceURL {
+	filename = "css/answersStyles.css";
+	framework = "app";
+	rel = "stylesheet";
+}
 
 Content : WOString {
     value = getContent;
@@ -61,16 +66,18 @@ Form: WOForm {
 
 newAnswer : WOTextField {
 	value = newAnswer;
+	id = "newAnswerId";
 }
 
 userName: WOTextField {
 	value = person;
+	id = "personId";
 }
 
 addAnswer: WOSubmitButton {
 	action = addAnswer;
 	value = "Add";
-	id = "saveButton";
+	id = "addButton";
 }
 
 answerFileAttach : WOFileUpload {

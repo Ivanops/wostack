@@ -1,6 +1,11 @@
 Title : WOString {
     value = getTitle;
 }
+AnswerStyle : WOResourceURL {
+	filename = "css/answersStyles.css";
+	framework = "app";
+	rel = "stylesheet";
+}
 
 Content : WOString {
     value = getContent;

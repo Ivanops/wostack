@@ -11,11 +11,7 @@ QuestionStyle : WOResourceURL {
 	rel = "stylesheet";
 }
 
-AnswerStyle : WOResourceURL {
-	filename = "css/answersStyles.css";
-	framework = "app";
-	rel = "stylesheet";
-}
+
 
 createLink: WOHyperlink {
 	pageName = "Create";

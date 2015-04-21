@@ -5,30 +5,25 @@ html, body {
 }
 
 .question {
-	height: 100px;
-	display: block;
-	width: 50%;
-    margin: 0 auto;
-    border-top: 1px double black;
+	height: 70px;
+	width: 40%;
+	border: 1px solid black;
+	margin: 5px;
+	border-radius: 5px;
+	background-color: silver;
 }
 
 .question .title {
-	font-size: 20px;
-	text-align: left;
+	font-size: 24px;
+	text-align: center;
 	height: 40px;
 }
 
 .question .content {
 	font-size: 18px;
-	overflow: hidden;
-    white-space: nowrap;
+	overflow:hidden;
+    white-space:nowrap;
 	text-overflow: ellipsis;
-	text-align: justify;
+	text-align: center;
 	width: 90%;
-
-}
-
-.question .image {
-	height: 80%;
-	width: 80%;
 }
