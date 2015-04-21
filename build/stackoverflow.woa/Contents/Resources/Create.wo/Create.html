@@ -5,16 +5,22 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>Create Question</title>
+	<webobject name="prototype"></webobject>
+	<webobject name="createCollapase"></webobject>
 </head>
 <body>
-	<h1>Create Question</h1>
-	<webobject name="Form">
-		<h3>Title</h3><webobject name="setTitle"></webobject>
-		<h3>Content</h3><webobject name="setContent"></webobject>
-		<br></br>
-		<webobject name = "fileUpload"></webobject>
-		<webobject name="saveQuestion"></webobject>
-	</webobject>
+	<div id="create-question-form" style="display:none;">
+		<h1>Create Question</h1>
+		<webobject name="Form">
+			<h3>Title</h3><webobject name="setTitle"></webobject>
+			<h3>Content</h3><webobject name="setContent"></webobject>
+			<br></br>
+			<webobject name = "fileUpload"></webobject>
+			<webobject name="saveQuestion"></webobject>
+		</webobject>
+	</div>
+	<button id="create-button" type="button" onclick="showCreate()">Create Question</button>
+	<button id="hide-button" type="button" onclick="hideCreate()" style="display:none;">Cancel</button>
 	<h2>Question Added</h2>
 	<h3 id = "titleShow"><webobject name="lastTitle"></webobject></h3>
 	<div id = "contentShow"><webobject name="lastContent"></webobject></div>
