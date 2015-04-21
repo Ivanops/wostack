@@ -32,6 +32,9 @@ public class Create extends WOComponent {
 	public String imgName;
 	private int count;
 
+	/** Constructor WebObjectComponent
+	 * @param context
+	 */
 	public Create(WOContext context) {
         super(context);
         this.nameToInsert = "";
@@ -46,6 +49,9 @@ public class Create extends WOComponent {
         this.count = 0;
     }
 	
+	/**
+	 * Creates a new question
+	 */
 	public void checkClick () {
 		if(this.nameToInsert != null && this.contentToInsert != null) {
 			Question question = new Question(this.nameToInsert, this.contentToInsert);
@@ -82,6 +88,9 @@ public class Create extends WOComponent {
         this.contentToInsert = "";
 	}
 	
+	/**
+	 * Print questions
+	 */
 	public void showQuestions() {
 		System.out.println("show!!!");
 		for (int i = 0; i < this.count; i++) {

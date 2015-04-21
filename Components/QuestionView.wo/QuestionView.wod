@@ -40,6 +40,10 @@ AnswerContent: WOString {
 	value = answer.content;
 }
 
+addAnswerError: WOString {
+	value = error;
+}
+
 addPoint: WOSubmitButton {
 	action = addPoint;
 	value = "ADD";
