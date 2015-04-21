@@ -88,3 +88,7 @@ answerFileAttach : WOFileUpload {
 answerImage : WOImage {
 	filename = answer.imagePath;
 }
+
+showAnswerImage : WOConditional {
+	condition = answer.hasAnswerImage;
+}

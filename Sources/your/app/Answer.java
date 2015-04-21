@@ -60,4 +60,8 @@ public class Answer {
 	public NSData getImage(){
 		return this.img;
 	}
+	
+	public boolean hasAnswerImage(){
+		return this.imagePath != "" ? true:false;
+	}
 }
