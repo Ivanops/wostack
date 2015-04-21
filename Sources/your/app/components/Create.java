@@ -51,18 +51,14 @@ public class Create extends WOComponent {
 			Question question = new Question(this.nameToInsert, this.contentToInsert);
 
 			try {
-				if(this.imgName != "") {
-					File f2 = new File("../../Resources/images/" + this.imgName);
-					FileOutputStream fos2 = new FileOutputStream(f2.getAbsolutePath());
+				if(this.imgName != "") {				
+					File f2 = new File("Contents/WebServerResources/" + this.imgName);
+					FileOutputStream fos2 = new FileOutputStream(f2.getCanonicalPath());
+					System.out.println(f2.getCanonicalPath());
 					img.writeToStream(fos2);				
 					fos2.close();
-					
-					File f = new File("Contents/Resources/images/" + this.imgName);
-					FileOutputStream fos = new FileOutputStream(f.getAbsolutePath());
-					img.writeToStream(fos);				
-					fos.close();
 										
-					question.setImagePath("images/" + f.getName());
+					question.setImagePath(this.imgName);
 				}
 
 				

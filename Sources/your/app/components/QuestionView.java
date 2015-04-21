@@ -74,7 +74,6 @@ public class QuestionView extends WOComponent {
 					fos2 = new FileOutputStream(f2.getAbsolutePath());
 					this.answerImage.writeToStream(fos2);				
 					fos2.close();
-					
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				} catch (IOException e) {
