@@ -25,6 +25,7 @@ public class QuestionView extends WOComponent {
 	public String person = "unknow";
 	public String answerImagePath;
 	public NSData answerImage;
+	public String error;
     
     public QuestionView(WOContext context) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         super(context);
@@ -57,7 +58,7 @@ public class QuestionView extends WOComponent {
 	} 
     
     public void addAnswer () {
-    	if(!this.newAnswer.equals("") && !this.person.equals("")) {
+    	if(this.newAnswer != null && this.person != null) {
     		Answer ans = new Answer(this.newAnswer, this.person);
     		if(this.answerImagePath != "") {
 				try {
@@ -82,6 +83,9 @@ public class QuestionView extends WOComponent {
 				}    		
     		}
     		question.addAnswer(ans);
+    		error = "";
+    	}else{
+    		error = "The User field or Answer field are empty.";
     	}
 		this.newAnswer = "";
 		this.answerImagePath = "";
