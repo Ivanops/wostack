@@ -10,20 +10,24 @@
 </head>
 <body>
 	<div id="create-question-form" style="display:none;">
-		<h1>Create Question</h1>
+		<h1 class = "stack-title">Create Question</h1>
 		<webobject name="Form">
-			<h3>Title</h3><webobject name="setTitle"></webobject>
-			<h3>Content</h3><webobject name="setContent"></webobject>
+			<h3 class = "stack-content">Title</h3><webobject name="setTitle"></webobject>
+			<h3 class = "stack-content">Content</h3><webobject name="setContent"></webobject>
 			<br></br>
 			<webobject name = "fileUpload"></webobject>
+			<br></br>
 			<webobject name="saveQuestion"></webobject>
+			<button id="hide-button" class = "stack-button" type="button" onclick="hideCreate()" style="display:none;">Cancel</button>
 		</webobject>
 	</div>
-	<button id="create-button" type="button" onclick="showCreate()">Create Question</button>
-	<button id="hide-button" type="button" onclick="hideCreate()" style="display:none;">Cancel</button>
-	<h2>Question Added</h2>
-	<h3 id = "titleShow"><webobject name="lastTitle"></webobject></h3>
-	<div id = "contentShow"><webobject name="lastContent"></webobject></div>
+	<button id="create-button" class = "stack-button" type="button" onclick="showCreate()">Create Question</button>
+	
+	<h2 class = "stack-title">Last Question Added</h2>
+	<h3 id = "titleShow" class = "stack-title"><webobject name="lastTitle"></webobject></h3>
+	<div id = "contentShow" class = "stack-title"><webobject name="lastContent"></webobject></div>
+	
+	<div class = "separator"> Top Questions</div>
 	
 	<webobject name="questionList">
 		<webobject name = "questionItem"></webobject>

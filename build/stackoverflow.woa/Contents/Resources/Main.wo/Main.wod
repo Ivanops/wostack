@@ -10,10 +10,3 @@ QuestionStyle : WOResourceURL {
 	framework = "app";
 	rel = "stylesheet";
 }
-
-
-
-createLink: WOHyperlink {
-	pageName = "Create";
-	
-}
