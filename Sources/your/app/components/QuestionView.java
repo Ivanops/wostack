@@ -23,7 +23,7 @@ public class QuestionView extends WOComponent {
 	public String newAnswer;
 	public Integer index;
 	public String person = "Anonymous";
-	public String answerImagePath;
+	public String answerImageName;
 	public NSData answerImage;
 	public String error;
     
@@ -36,7 +36,7 @@ public class QuestionView extends WOComponent {
      */
     public QuestionView(WOContext context) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         super(context);
-        this.answerImagePath = "";
+        this.answerImageName = "";
         this.answerImage = new NSData();
         
         //Obtain the question Id from context(Dynamic object)
@@ -92,21 +92,21 @@ public class QuestionView extends WOComponent {
     public void addAnswer () {
     	if(this.newAnswer != null && this.person != null) {
     		Answer ans = new Answer(this.newAnswer, this.person);
-    		if(this.answerImagePath != "") {
+    		if(this.answerImageName != "") {
 				try {
-					ans.imagePath = "images/" + this.answerImagePath;
+					String destinationFolderName = "/images/stackoverflow/resources/answers/";
+					File destinationFolder = new File(destinationFolderName);
 					
-					File f = new File("Contents/Resources/images/" + this.answerImagePath);
-					FileOutputStream fos;
-					fos = new FileOutputStream(f.getAbsolutePath());
-					this.answerImage.writeToStream(fos);				
-					fos.close();
-					
-					File f2 = new File("../../Resources/images/" + this.answerImagePath);
-					FileOutputStream fos2;
-					fos2 = new FileOutputStream(f2.getAbsolutePath());
-					this.answerImage.writeToStream(fos2);				
-					fos2.close();
+					if(!destinationFolder.exists()){
+						destinationFolder.mkdirs();
+					}
+					String imageDestination = destinationFolderName + this.answerImageName;
+					File imageToSave = new File(imageDestination);
+					FileOutputStream streamToImage = new FileOutputStream(imageToSave.getCanonicalPath());
+					answerImage.writeToStream(streamToImage);				
+					streamToImage.close();
+										
+					ans.imagePath = "/stackoverflow/resources/answers/" + this.answerImageName;
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				} catch (IOException e) {
@@ -116,7 +116,7 @@ public class QuestionView extends WOComponent {
     		question.addAnswer(ans);
     		error = "";
     		this.newAnswer = "";
-    		this.answerImagePath = "";
+    		this.answerImageName = "";
     	}else{
     		error = "Your Answer field or Person field are empty.";
     	}

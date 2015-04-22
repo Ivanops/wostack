@@ -16,7 +16,7 @@ showImage : WOConditional {
 }
 
 image : WOImage{
-	filename = getImagePath;
+	src = getImagePath;
 }
 List : WORepetition {
     list = getList;
@@ -94,11 +94,11 @@ addAnswer: WOSubmitButton {
 
 answerFileAttach : WOFileUpload {
 	data = answerImage;
-	filePath = answerImagePath;
+	filePath = answerImageName;
 }
 
 answerImage : WOImage {
-	filename = answer.imagePath;
+	src = answer.imagePath;
 }
 
 showAnswerImage : WOConditional {
