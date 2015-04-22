@@ -22,7 +22,7 @@ public class QuestionView extends WOComponent {
 	public Answer answer;
 	public String newAnswer;
 	public Integer index;
-	public String person = "unknow";
+	public String person = "Anonymous";
 	public String answerImagePath;
 	public NSData answerImage;
 	public String error;
@@ -116,11 +116,11 @@ public class QuestionView extends WOComponent {
     		}
     		question.addAnswer(ans);
     		error = "";
+    		this.newAnswer = "";
+    		this.answerImagePath = "";
     	}else{
-    		error = "The User field or Answer field are empty.";
+    		error = "Your Answer field or Person field are empty.";
     	}
-		this.newAnswer = "";
-		this.answerImagePath = "";
 	}
     
     /**
