@@ -1,9 +1,6 @@
 package your.app;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-
-import cucumber.api.java.lu.an;
 
 public class Question {
 	

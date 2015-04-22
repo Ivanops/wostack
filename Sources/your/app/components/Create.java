@@ -74,8 +74,6 @@ public class Create extends WOComponent {
 				e.printStackTrace();
 			}
 			Helper.addQuestions(question);			
-			this.count++;
-			this.showQuestions();
 			this.lastTitle = this.nameToInsert;
 			this.lastContent = this.contentToInsert;
 						

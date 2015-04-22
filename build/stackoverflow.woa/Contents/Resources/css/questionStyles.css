@@ -2,39 +2,109 @@ html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
-.question {
-	height: 80px;
-	display: block;
-	width: 50%;
-    margin: 0 auto;
-    border-top: 1px double black;
+.stack-title {
+	margin-left: 20px;
 }
 
-.question .title {
+.file-upload{
+	margin-left: 30px;
+	border-radius: 5px;
+	background-color: rgb(220, 220, 220);
+}
+
+.file-upload button{
+	background-color: rgb(255, 0, 0);
+}
+
+.stack-button {
+	background-color: rgb(51, 153, 255);
+	width: 150px;
+	height: 30px;
+	border: 1px solid rgb(0, 128, 255);
+	outline: none;
+	color: rgb(255, 255, 255);
+	font-size: 15px;
+	border-radius: 5px;
+	margin-left: 20px;
+	box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset,0 1px 1px rgba(100,100,100,0.3);
+}
+
+.stack-button: hover {
+	background-color: rgb(0, 128, 255);
+}
+
+.stack-content {
+	margin-left: 30px;
+}
+
+.stack-input-title {
+	margin-left: 30px;
+	margin-top: -20px;
+}
+
+.stack-input-content {
+	margin-left: 30px;
+	margin-top: -20px;
+}
+
+#contentShow {
+	margin-top: -10px;
+	width: 250px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#titleShow {
+	margin-top: -10px;
+	width: 250px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.separator {
+	margin-top: 20px;
+	margin-left: 20px;
+	border-bottom: 1px solid rgb(150, 150, 150);
+	padding-bottom: 20px;
 	font-size: 20px;
+}
+
+.question-card {
+	height: 80px;
+	width: 100%;
+	background-color: rgb(240, 240, 240);
+	border-bottom: 1px solid rgb(200, 200, 200);
+	margin-left: 15px;
+	padding-top: 10px;
+}
+
+.question-card .questionTitle {
+	font-size: 30px;
 	text-align: left;
 	height: 30px;
-	color: aqua;
+	color:   rgb(51, 153, 255);
+	margin-left: 25px;
+	text-decoration: none;
+	
+}
+.gray-theme{
+	color: rgb(160, 160, 160);
 }
 
-.question .title a {
-	text-decoration: none;
+.question-card .questionTitle:hover {
+	color: rgb(51, 153, 255, 0.7);
 }
-.question .title:first-letter {
-	text-transform: uppercase;
-}
-.question .content {
+
+.question-card .content {
 	font-size: 18px;
 	overflow: hidden;
     white-space: nowrap;
 	text-overflow: ellipsis;
 	text-align: justify;
 	width: 90%;
-}
-
-.question .image {
-	height: 80%;
-	width: 80%;
+	margin-left: 25px;
+	margin-top: 5px;
 }
