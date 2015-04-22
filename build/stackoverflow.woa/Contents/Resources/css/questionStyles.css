@@ -2,6 +2,7 @@ html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .stack-title {
@@ -28,6 +29,7 @@ html, body {
 	font-size: 15px;
 	border-radius: 5px;
 	margin-left: 20px;
+	box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset,0 1px 1px rgba(100,100,100,0.3);
 }
 
 .stack-button: hover {
@@ -65,7 +67,7 @@ html, body {
 .separator {
 	margin-top: 20px;
 	margin-left: 20px;
-	border-bottom: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid rgb(150, 150, 150);
 	padding-bottom: 20px;
 	font-size: 20px;
 }
@@ -76,6 +78,7 @@ html, body {
 	background-color: rgb(240, 240, 240);
 	border-bottom: 1px solid rgb(200, 200, 200);
 	margin-left: 15px;
+	padding-top: 10px;
 }
 
 .question-card .questionTitle {
@@ -85,6 +88,10 @@ html, body {
 	color:   rgb(51, 153, 255);
 	margin-left: 25px;
 	text-decoration: none;
+	
+}
+.gray-theme{
+	color: rgb(160, 160, 160);
 }
 
 .question-card .questionTitle:hover {
