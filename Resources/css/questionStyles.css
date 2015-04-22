@@ -2,6 +2,7 @@ html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .stack-title {
@@ -27,6 +28,7 @@ html, body {
 	font-size: 15px;
 	border-radius: 5px;
 	margin-left: 20px;
+	box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset,0 1px 1px rgba(100,100,100,0.3);
 }
 .stack-button: hover {
 	background-color: rgb(0, 128, 255);

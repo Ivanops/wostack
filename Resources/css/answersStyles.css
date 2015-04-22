@@ -1,6 +1,12 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
 .go-back-link {
 	  width: 1000px;
-	  margin: 0 auto;
+	  margin: 10px auto 0;
 	  height: 25px;
 }
 .go-back-link-a {
@@ -74,6 +80,7 @@
     min-height: 50px;
 }
 .post-text {
+	padding-top: 15px;
     text-align: left;
 }
 .post-person {
@@ -156,6 +163,6 @@ input[type="text"] {
 }
 
 .answer-by {
-	color: #44E;
+	color: #F90;
 }
   
