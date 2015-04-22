@@ -24,6 +24,10 @@ List : WORepetition {
     index = index;
 }
 
+ListSize: WOString {
+	value = getList.size;
+}
+
 ID: WOString {
 	value = index;
 }
@@ -46,31 +50,34 @@ addAnswerError: WOString {
 
 addPoint: WOSubmitButton {
 	action = addPoint;
-	value = "ADD";
-	class = "points-button";
+	value = "";
+	class = "arrow-up";
 }
 
 removePoint: WOSubmitButton {
 	action = removePoint;
-	value = "Remove";
-	class = "points-button";
+	value = "";
+	class = "arrow-down";
 }
 
 FormAdd: WOForm {
 	enctype = "multipart/form-data";
+	class = "form-up";
 }
 
 FormRemove: WOForm {
 	enctype = "multipart/form-data";
+	class = "form-down";
 }
 
 Form: WOForm {
 	enctype = "multipart/form-data";
 }
 
-newAnswer : WOTextField {
+newAnswer : WOText {
 	value = newAnswer;
 	id = "newAnswerId";
+	class = "new-answer-textarea";
 }
 
 userName: WOTextField {
@@ -80,8 +87,9 @@ userName: WOTextField {
 
 addAnswer: WOSubmitButton {
 	action = addAnswer;
-	value = "Add";
+	value = "Post";
 	id = "addButton";
+	class = "new-answer-button";
 }
 
 answerFileAttach : WOFileUpload {
