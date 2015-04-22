@@ -1,16 +1,13 @@
 package stepDefinition;
 
-import java.awt.List;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
 
@@ -24,6 +21,7 @@ public class Test_Steps_Add_Answer {
 		
 		driver.get("http://localhost:50000");
 		
+		driver.findElement(By.id("create-button")).click();
 		driver.findElement(By.id("titleInput")).sendKeys(question);
 		driver.findElement(By.id("contentInput")).sendKeys(content);
 	    driver.findElement(By.id("saveButton")).click();

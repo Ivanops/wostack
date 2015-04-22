@@ -24,6 +24,7 @@ public class Test_Steps {
 	
 	@When("^User enters Title and Content$")
 	public void user_enters_title_and_content() throws Throwable {
+		driver.findElement(By.id("create-button")).click();
 		driver.findElement(By.id("titleInput")).sendKeys("Test title");
 	    driver.findElement(By.id("contentInput")).sendKeys("Here is a test content");
 	    driver.findElement(By.id("saveButton")).click();
