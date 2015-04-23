@@ -11,7 +11,7 @@ public class Application extends WOApplication {
 	}
 
 	public Application() {
-		NSLog.out.appendln("Welcome to " + name() + " !");
+		NSLog.out.appendln("Welcome to " + name() + "!");
 		/* ** put your initialization code in here ** */
 		setAllowsConcurrentRequestHandling(true);
 	}

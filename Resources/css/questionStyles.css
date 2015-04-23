@@ -52,7 +52,6 @@ html, body {
 
 #contentShow {
 	margin-top: -10px;
-	width: 250px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }

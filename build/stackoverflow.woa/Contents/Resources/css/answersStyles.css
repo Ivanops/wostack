@@ -30,7 +30,7 @@ html, body {
     padding:15px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-.title {
+.question .title {
     text-align: left;
     background-color:#eee;
     border-bottom: 3px solid rgb(115,115,115);
@@ -39,11 +39,15 @@ html, body {
     font-size: 26px;
     color: rgb(51, 153, 255);
 }
-.content {
+.question .content {
     text-align: left;
     padding: 20px 15px;
     font-size: 18px;
     color: rgb(127,127,127);
+}
+
+.question .attachment {
+	padding-left: : 15px;
 }
 .answers {
 	cursor: default;
