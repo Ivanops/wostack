@@ -3,7 +3,6 @@ package your.app.components;
 import java.util.ArrayList;
 
 import your.app.Answer;
-import your.app.Helper;
 import your.app.Question;
 
 import java.io.File;
@@ -36,16 +35,15 @@ public class QuestionView extends WOComponent {
      */
     public QuestionView(WOContext context) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         super(context);
-        this.answerImageName = "";
-        this.answerImage = new NSData();
-        
-        //Obtain the question Id from context(Dynamic object)
-        WOComponent QuestionItem =  context.component();
-        Method getId = QuestionItem.getClass().getMethod("getId");
-        int Id = (Integer)getId.invoke(QuestionItem);
-        question = Helper.getQuestionsById(Id);
     }
-
+   
+    /**
+     * Sets the Question
+     * @param Questio
+     */
+    public void setQuestion(Question questionItem) {
+        question = questionItem;
+    }
     /**
      * Gets the title
      * @return Title
@@ -94,7 +92,7 @@ public class QuestionView extends WOComponent {
     		Answer ans = new Answer(this.newAnswer, this.person);
     		if(this.answerImageName != "") {
 				try {
-					String destinationFolderName = "/images/stackoverflow/resources/answers/";
+					String destinationFolderName = "c:\\images\\stackoverflow\\resources\\answers\\";
 					File destinationFolder = new File(destinationFolderName);
 					
 					if(!destinationFolder.exists()){

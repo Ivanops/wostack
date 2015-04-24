@@ -1,9 +1,9 @@
 questionTitle : WOHyperlink {
-	pageName = "QuestionView";
-	string = questionTitle;
+	action = showQuestion;
+	string = question.title;
 	class = "questionTitle";
 }
 
 questionContent : WOString {
-	value = questionContent;
+	value = question.content;
 }
