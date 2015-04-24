@@ -1,0 +1,102 @@
+Title : WOString {
+    value = getTitle;
+}
+AnswerStyle : WOResourceURL {
+	filename = "css/answersStyles.css";
+	framework = "app";
+	rel = "stylesheet";
+}
+
+Content : WOString {
+    value = getContent;
+}
+
+showImage : WOConditional {
+	condition = hasImage;
+}
+
+image : WOImage{
+	src = getImagePath;
+}
+List : WORepetition {
+    list = getList;
+    item = answer;
+    index = index;
+}
+
+ListSize: WOString {
+	value = getList.size;
+}
+
+Points: WOString {
+	value = answer.points;
+}
+
+Person: WOString {
+	value = answer.person;
+}
+
+AnswerContent: WOString {
+	value = answer.content;
+}
+
+addAnswerError: WOString {
+	value = error;
+}
+
+addPoint: WOSubmitButton {
+	action = addPoint;
+	value = "";
+	class = "arrow-up";
+}
+
+removePoint: WOSubmitButton {
+	action = removePoint;
+	value = "";
+	class = "arrow-down";
+}
+
+FormAdd: WOForm {
+	enctype = "multipart/form-data";
+	class = "form-up";
+}
+
+FormRemove: WOForm {
+	enctype = "multipart/form-data";
+	class = "form-down";
+}
+
+Form: WOForm {
+	enctype = "multipart/form-data";
+}
+
+newAnswer : WOText {
+	value = newAnswer;
+	id = "newAnswerId";
+	class = "new-answer-textarea";
+}
+
+userName: WOTextField {
+	value = person;
+	id = "personId";
+}
+
+addAnswer: WOSubmitButton {
+	action = addAnswer;
+	value = "Post";
+	id = "addButton";
+	class = "new-answer-button";
+}
+
+answerFileAttach : WOFileUpload {
+	data = answerImage;
+	filePath = answerImageName;
+}
+
+answerImage : WOImage {
+	src = answer.imagePath;
+}
+
+showAnswerImage : WOConditional {
+	condition = answer.hasAnswerImage;
+}

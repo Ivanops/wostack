@@ -1,0 +1,9 @@
+View: Create {
+
+}
+
+QuestionStyle : WOResourceURL {
+	filename = "css/questionStyles.css";
+	framework = "app";
+	rel = "stylesheet";
+}

@@ -1,0 +1,72 @@
+<title>WOStackoverflow</title>
+<link rel="stylesheet" href=<webobject name=AnswerStyle></webobject> />
+<div class="go-back-link">
+<a class="go-back-link-a" href="/cgi-bin/WebObjects/stackoverflow.woa">Question List</a>
+</div>
+<div class="question">
+    <div class="title">
+        <webobject name="Title"></webobject>
+    </div>
+    <div class="content">
+        <webobject name="Content"></webobject>
+    </div>
+    <div class="attachment">
+        <webobject name = "showImage">
+        	<h3>Attached file</h3>
+            <webobject name = "image"></webobject>
+        </webobject>
+    </div>
+</div>
+<div class="answers">
+    <div class="answers-header"><webobject name = "ListSize"></webobject> Answers</div>
+    <div class="anwers-list">
+        <webobject name="List">
+            <div class="anwers-item">
+                <div class="vote">
+                    <webobject name = "FormAdd">
+                        <webobject name = "addPoint"></webobject>
+                    </webobject>
+                    <div class="points">
+                        <webobject name = "Points"></webobject>
+                    </div>
+                    <webobject name = "FormRemove">
+                        <webobject name = "removePoint"></webobject>
+                    </webobject>
+                </div>
+                <div class="post">
+                    <div class="post-text">
+                        <webobject name = "AnswerContent"></webobject>
+                     </div>
+                         <webobject name = "showAnswerImage">
+                         <h3>Attached File</h3>
+                            <webobject name = "answerImage"></webobject>
+                        </webobject>
+                </div>
+                <div class="post-person">
+                    <span class="answer-by">Answered by:</span> <webobject name = "Person"></webobject>
+                </div>
+            </div>
+        </webobject>
+    </div>
+    <webobject name="Form">
+        <div class="new-answer">
+            <div class="new-answer-title">Your Answer</div>
+            <div class="new-answer-text">
+                <webobject name="newAnswer"></webobject>
+            </div>
+            <div class="new-answer-person">
+                <div class="person-title">Person</div>
+                <div class="person-text">
+                    <webobject name="userName"></webobject>
+                </div>
+                <div class="person-image">
+                	Upload Image: <webobject name = "answerFileAttach"></webobject>
+                </div>
+            </div>
+            <div class="new-answer-submit">
+                <webobject name="addAnswer"></webobject>
+            </div>
+            <div class="error-message"><webobject name="addAnswerError"></webobject></div>
+        </div>
+    </webobject>
+</div>

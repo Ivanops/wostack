@@ -1,0 +1,9 @@
+questionTitle : WOHyperlink {
+	action = showQuestion;
+	string = question.title;
+	class = "questionTitle";
+}
+
+questionContent : WOString {
+	value = question.content;
+}

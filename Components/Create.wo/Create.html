@@ -1,0 +1,30 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<webobject name="prototype"></webobject>
+	<webobject name="createCollapase"></webobject>
+</head>
+<body>
+	<div id="create-question-form" style="display:none;">
+		<h2 class = "stack-title gray-theme">Ask us something</h2>
+		<webobject name="Form">
+			<h3 class = "stack-content gray-theme">Title</h3><webobject name="setTitle"></webobject>
+			<h3 class = "stack-content gray-theme">Content</h3><webobject name="setContent"></webobject>
+			<br></br>
+			<webobject name = "fileUpload"></webobject>
+			<br></br>
+			<webobject name="saveQuestion"></webobject>
+			<button id="hide-button" class = "stack-button" type="button" onclick="hideCreate()" style="display:none;">Cancel</button>
+		</webobject>
+	</div>
+	<button id="create-button" class = "stack-button" type="button" onclick="showCreate()">Ask Question</button>
+	
+	<h2 class = "stack-title gray-theme">Last Question Added</h2>
+	<h3 id = "titleShow" class = "stack-title"><webobject name="lastTitle"></webobject></h3>
+	<div id = "contentShow" class = "stack-title"><webobject name="lastContent"></webobject></div>
+	
+	<div class = "separator gray-theme"> Top Questions</div>
+	
+	<webobject name="questionList">
+		<webobject name = "questionItem"></webobject>
+	</webobject>	
+</body>

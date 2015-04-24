@@ -1,0 +1,53 @@
+Form: WOForm {
+	enctype = "multipart/form-data";
+}
+
+setTitle: WOTextField {
+	value = nameToInsert;
+	id = "titleInput";
+	class = "stack-input-title";
+}
+
+setContent: WOText {
+	value = contentToInsert;
+	id = "contentInput";
+	class = "stack-input-content";
+}
+
+saveQuestion: WOSubmitButton {
+	action = checkClick;
+	value = "Save";
+	id = "saveButton";
+	class = "stack-button";
+}
+
+lastTitle: WOString {
+	value = lastTitle;
+}
+
+lastContent: WOString {
+	value = lastContent;
+}
+
+questionList: WORepetition {
+	list = questions;
+	item = currentQuestion;
+}
+
+questionItem: QuestionItem {
+    question = currentQuestion;
+}
+
+fileUpload : WOFileUpload {
+	data = img;
+	filePath = imgName;
+	class = "file-upload";
+}
+
+prototype : WOJavaScript { 
+	scriptFile= "Contents/Resources/scripts/prototype.js";
+}
+
+createCollapase : WOJavaScript { 
+	scriptFile= "Contents/Resources/scripts/createCollapse.js";
+}
