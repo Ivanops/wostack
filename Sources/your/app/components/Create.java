@@ -43,7 +43,7 @@ public class Create extends WOComponent {
         this.lastTitle = "";
         this.lastContent = "";
         
-        questions = Helper.getQuestions();
+        questions = (ArrayList<Question>)this.application().valueForKey("questions");
         this.img = new NSData();
         this.imgName = "";
         this.count = 0;
@@ -59,7 +59,7 @@ public class Create extends WOComponent {
 			try {
 				if(this.imgName != "") {	
 					
-					String destinationFolderName = "/images/stackoverflow/resources/";
+					String destinationFolderName = "c:\\images\\stackoverflow\\resources\\";
 					File destinationFolder = new File(destinationFolderName);
 					
 					if(!destinationFolder.exists()){
@@ -80,7 +80,8 @@ public class Create extends WOComponent {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			Helper.addQuestions(question);			
+			
+			questions.add(question);			
 			this.lastTitle = this.nameToInsert;
 			this.lastContent = this.contentToInsert;
 						
