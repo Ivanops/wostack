@@ -56,15 +56,5 @@ public class Question {
 	
 	public void addAnswer(Answer answer) {
 		this.Answers.add(answer);
-		this.showAnswers();
-	}
-	
-	public void showAnswers() {
-		for (Answer item : this.Answers) {
-			System.out.println(item.getContent());
-			System.out.println(item.getPoints());
-			System.out.println(item.getPerson());
-		}
-			
 	}
 }

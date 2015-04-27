@@ -13,6 +13,10 @@ import com.webobjects.appserver.WOComponent;
 import com.webobjects.foundation.NSData;
 
 public class Create extends WOComponent {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public String nameToInsert;
 	public String contentToInsert;
 	
@@ -86,17 +90,5 @@ public class Create extends WOComponent {
 		 
 		this.nameToInsert = "";
         this.contentToInsert = "";
-	}
-	
-	/**
-	 * Print questions
-	 */
-	public void showQuestions() {
-		System.out.println("show!!!");
-		for (int i = 0; i < this.count; i++) {
-			System.out.println("Question: " + (i+1));
-			System.out.println(this.questions.get(i).getTitle());
-			System.out.println(this.questions.get(i).getContent());
-		}
 	}
 }

@@ -124,8 +124,6 @@ public class QuestionView extends WOComponent {
      * Gives a point to the answer
      */
     public void addPoint () {
-    	System.out.println(this.index);
-    	System.out.println("ADD");
     	Answer aux = question.getAnswers().get(index);
     	aux.setPoints(aux.getPoints() + 1);
     }
@@ -134,8 +132,6 @@ public class QuestionView extends WOComponent {
      * Remove the Point the answer
      */
     public void removePoint () {
-    	System.out.println(this.index);
-    	System.out.println("remove");
     	Answer aux = question.getAnswers().get(index);
     	aux.setPoints(aux.getPoints() - 1);
     }
